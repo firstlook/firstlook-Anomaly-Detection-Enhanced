@@ -1,2 +1,3 @@
 from keras.datasets import fashion_mnist
-fro
+from keras.utils import to_categorical
+import numpy a
