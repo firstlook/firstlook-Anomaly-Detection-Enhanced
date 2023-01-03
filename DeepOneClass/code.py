@@ -9,4 +9,8 @@ import matplotlib.pyplot as plt
 x_train = x_train.reshape(x_train.shape[0], 28, 28, 1)
 x_test = x_test.reshape(x_test.shape[0], 28, 28, 1)
 
-x_train = x_train.astype('float32') 
+x_train = x_train.astype('float32') / 255
+x_test = x_test.astype('float32') / 255
+
+#学習データ
+x_train_s,
