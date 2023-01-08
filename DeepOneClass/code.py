@@ -13,4 +13,7 @@ x_train = x_train.astype('float32') / 255
 x_test = x_test.astype('float32') / 255
 
 #学習データ
-x_train_s,
+x_train_s, x_test_s, x_test_b = [], [], []
+x_ref, y_ref = [], []
+
+x_trai
