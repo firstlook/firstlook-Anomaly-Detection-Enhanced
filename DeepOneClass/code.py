@@ -16,4 +16,8 @@ x_test = x_test.astype('float32') / 255
 x_train_s, x_test_s, x_test_b = [], [], []
 x_ref, y_ref = [], []
 
-x_trai
+x_train_shape = x_train.shape
+
+
+for i in range(len(x_train)):
+    if y
