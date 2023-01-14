@@ -22,4 +22,5 @@ x_train_shape = x_train.shape
 for i in range(len(x_train)):
     if y_train[i] == 7:#スニーカーは7
         temp = x_train[i]
-        x_t
+        x_train_s.append(temp.reshape((x_train_shape[1:])))
+    else:
