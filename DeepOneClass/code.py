@@ -25,4 +25,5 @@ for i in range(len(x_train)):
         x_train_s.append(temp.reshape((x_train_shape[1:])))
     else:
         temp = x_train[i]
-        x_ref.append
+        x_ref.append(temp.reshape((x_train_shape[1:])))
+        y_ref.append(y_trai
