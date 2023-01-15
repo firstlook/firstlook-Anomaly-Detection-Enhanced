@@ -26,4 +26,9 @@ for i in range(len(x_train)):
     else:
         temp = x_train[i]
         x_ref.append(temp.reshape((x_train_shape[1:])))
-        y_ref.append(y_trai
+        y_ref.append(y_train[i])
+
+x_ref = np.array(x_ref)
+
+#refデータからランダムに6000個抽出
+numbe
