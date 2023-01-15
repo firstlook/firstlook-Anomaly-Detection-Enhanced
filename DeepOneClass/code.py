@@ -24,3 +24,5 @@ for i in range(len(x_train)):
         temp = x_train[i]
         x_train_s.append(temp.reshape((x_train_shape[1:])))
     else:
+        temp = x_train[i]
+        x_ref.append
