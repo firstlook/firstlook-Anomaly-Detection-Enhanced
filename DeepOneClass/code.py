@@ -31,4 +31,8 @@ for i in range(len(x_train)):
 x_ref = np.array(x_ref)
 
 #refデータからランダムに6000個抽出
-number = np.random.choice(np.arange(0,x_ref.shape[0
+number = np.random.choice(np.arange(0,x_ref.shape[0]),6000,replace=False)
+
+x, y = [], []
+
+x_ref_shape = x_re
