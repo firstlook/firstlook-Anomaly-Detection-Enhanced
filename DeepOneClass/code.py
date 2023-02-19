@@ -44,4 +44,7 @@ for i in number:
 
 x_train_s = np.array(x_train_s)
 x_ref = np.array(x)
-y_ref
+y_ref = to_categorical(y)
+
+#テストデータ
+for i in range(len(x_tes
