@@ -40,4 +40,8 @@ x_ref_shape = x_ref.shape
 for i in number:
     temp = x_ref[i]
     x.append(temp.reshape((x_ref_shape[1:])))
-    y.append
+    y.append(y_ref[i])
+
+x_train_s = np.array(x_train_s)
+x_ref = np.array(x)
+y_ref
