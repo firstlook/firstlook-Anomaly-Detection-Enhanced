@@ -50,4 +50,6 @@ y_ref = to_categorical(y)
 for i in range(len(x_test)):
     if y_test[i] == 7:#スニーカーは7
         temp = x_test[i,:,:,:]
-        x_test_s.append(temp.resh
+        x_test_s.append(temp.reshape((x_train_shape[1:])))
+
+    if y_test[i] == 9:
