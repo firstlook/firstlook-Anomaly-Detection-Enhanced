@@ -49,4 +49,5 @@ y_ref = to_categorical(y)
 #テストデータ
 for i in range(len(x_test)):
     if y_test[i] == 7:#スニーカーは7
-      
+        temp = x_test[i,:,:,:]
+        x_test_s.append(temp.resh
