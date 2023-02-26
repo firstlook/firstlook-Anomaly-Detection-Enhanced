@@ -47,4 +47,6 @@ x_ref = np.array(x)
 y_ref = to_categorical(y)
 
 #テストデータ
-for i in range(len(x_tes
+for i in range(len(x_test)):
+    if y_test[i] == 7:#スニーカーは7
+      
