@@ -54,4 +54,6 @@ for i in range(len(x_test)):
 
     if y_test[i] == 9:#ブーツは9
         temp = x_test[i,:,:,:]
-     
+        x_test_b.append(temp.reshape((x_train_shape[1:])))
+
+x_t
