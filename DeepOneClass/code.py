@@ -56,4 +56,5 @@ for i in range(len(x_test)):
         temp = x_test[i,:,:,:]
         x_test_b.append(temp.reshape((x_train_shape[1:])))
 
-x_t
+x_test_s = np.array(x_test_s)
+x_test_b = np.array
