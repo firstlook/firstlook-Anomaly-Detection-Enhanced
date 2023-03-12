@@ -57,4 +57,11 @@ for i in range(len(x_test)):
         x_test_b.append(temp.reshape((x_train_shape[1:])))
 
 x_test_s = np.array(x_test_s)
-x_test_b = np.array
+x_test_b = np.array(x_test_b)
+
+
+
+import cv2
+from PIL import Image
+
+de
