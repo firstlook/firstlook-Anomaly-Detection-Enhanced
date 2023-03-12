@@ -64,4 +64,7 @@ x_test_b = np.array(x_test_b)
 import cv2
 from PIL import Image
 
-de
+def resize(x):
+    x_out = []
+
+    for i in range(len(x)):
