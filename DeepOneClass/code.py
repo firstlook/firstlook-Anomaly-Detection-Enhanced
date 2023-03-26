@@ -68,3 +68,5 @@ def resize(x):
     x_out = []
 
     for i in range(len(x)):
+        img = cv2.cvtColor(x[i], cv2.COLOR_GRAY2RGB)
+        im
