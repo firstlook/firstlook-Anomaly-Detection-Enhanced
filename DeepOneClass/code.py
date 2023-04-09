@@ -77,4 +77,7 @@ def resize(x):
 X_train_s = resize(x_train_s)
 X_ref = resize(x_ref)
 X_test_s = resize(x_test_s)
-X_test
+X_test_b = resize(x_test_b)
+
+
+def original_loss(y_true, 
