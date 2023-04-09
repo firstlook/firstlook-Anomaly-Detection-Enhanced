@@ -75,4 +75,6 @@ def resize(x):
     return np.array(x_out)
 
 X_train_s = resize(x_train_s)
-X
+X_ref = resize(x_ref)
+X_test_s = resize(x_test_s)
+X_test
