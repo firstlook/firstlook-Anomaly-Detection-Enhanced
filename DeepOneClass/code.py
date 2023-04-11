@@ -80,4 +80,5 @@ X_test_s = resize(x_test_s)
 X_test_b = resize(x_test_b)
 
 
-def original_loss(y_true, 
+def original_loss(y_true, y_pred):
+    lc = 1/(classes*batchsize) *
