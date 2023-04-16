@@ -81,4 +81,8 @@ X_test_b = resize(x_test_b)
 
 
 def original_loss(y_true, y_pred):
-    lc = 1/(classes*batchsize) * batchsize**2 * K.sum((y_pred -K.mean(y_pred,axis=0))**2,a
+    lc = 1/(classes*batchsize) * batchsize**2 * K.sum((y_pred -K.mean(y_pred,axis=0))**2,axis=[1]) / ((batchsize-1)**2)
+    return lc
+
+#target data
+#学習しな
