@@ -85,4 +85,5 @@ def original_loss(y_true, y_pred):
     return lc
 
 #target data
-#学習しな
+#学習しながら、損失を取得
+lc.append(model_t.train_on_batch(batch
