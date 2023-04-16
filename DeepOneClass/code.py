@@ -86,4 +86,6 @@ def original_loss(y_true, y_pred):
 
 #target data
 #学習しながら、損失を取得
-lc.append(model_t.train_on_batch(batch
+lc.append(model_t.train_on_batch(batch_target, np.zeros((batchsize, feature_out))))
+
+#reference data
