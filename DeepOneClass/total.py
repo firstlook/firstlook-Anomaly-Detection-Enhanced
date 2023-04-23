@@ -75,3 +75,47 @@ def train(x_target, x_ref, y_ref, epoch_num):
         np.random.shuffle(x_target)
 
         #リファレンスデータシャッフル
+        np.random.shuffle(ref_samples)
+        for i in range(len(x_target)):
+            x_r.append(x_ref[ref_samples[i]])
+            y_r.append(y_ref[ref_samples[i]])
+        x_r = np.array(x_r)
+        y_r = np.array(y_r)
+
+        for i in range(int(len(x_target) / batchsize)):
+
+            #batchsize分のデータロード
+            batch_target = x_target[i*batchsize:i*batchsize+batchsize]
+            batch_ref = x_r[i*batchsize:i*batchsize+batchsize]
+            batch_y = y_r[i*batchsize:i*batchsize+batchsize]
+
+            #target data
+            #学習しながら、損失を取得
+            lc.append(model_t.train_on_batch(batch_target, np.zeros((batchsize, feature_out))))
+
+            #reference data
+            #学習しながら、損失を取得
+            ld.append(model_r.train_on_batch(batch_ref, batch_y))
+
+        loss.append(np.mean(ld))
+        loss_c.append(np.mean(lc))
+
+        if (epochnumber+1) % 5 == 0:
+            print("epoch:",epochnumber+1)
+            print("Descriptive loss:", loss[-1])
+            print("Compact loss", loss_c[-1])
+
+    #結果グラフ
+    plt.plot(loss,label="Descriptive loss")
+    plt.xlabel("epoch")
+    plt.legend()
+    plt.show()
+
+    plt.plot(loss_c,label="Compact loss")
+    plt.xlabel("epoch")
+    plt.legend()
+    plt.show()    
+
+    return model_t
+
+model = train(X_train_s, X_ref, y_ref, 5)
