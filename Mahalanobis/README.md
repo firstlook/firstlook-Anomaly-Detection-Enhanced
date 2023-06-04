@@ -12,4 +12,4 @@
   - 样本在规范化主成分空间各坐标轴上的投影(坐标分量)，可通过计算样本向量与规范化主成分的内积求得
 
 - **两个向量的马氏距离等价于两者在规范化的主成分空间内的欧氏距离** 
-  - If each of these axes is re-scaled to have unit variance
+  - If each of these axes is re-scaled to have unit variance, then the Mahalanobis distance corresponds to standard Euc
