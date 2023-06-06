@@ -15,4 +15,5 @@
   - If each of these axes is re-scaled to have unit variance, then the Mahalanobis distance corresponds to standard Euclidean distance in the transformed space. 
 
 
-####
+#### 1.2 马氏距离的特点
+- **特点一：马氏距离是无单位化的、尺度无关的，它内生地考虑到了
