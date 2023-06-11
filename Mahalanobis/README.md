@@ -17,4 +17,4 @@
 
 #### 1.2 马氏距离的特点
 - **特点一：马氏距离是无单位化的、尺度无关的，它内生地考虑到了数据集各坐标轴之间的相关性**
-  - The Mahalanobis distance is thus
+  - The Mahalanobis distance is thus unitless and scale-invariant, and takes into accoun
