@@ -20,4 +20,6 @@
   - The Mahalanobis distance is thus unitless and scale-invariant, and takes into account the correlations of the data set.
  
 - **特点二：马氏距离与样本在各主成分上的偏离度成正比**
-   - This distance is zero if P is at the mean of D, and grows as P moves away from the
+   - This distance is zero if P is at the mean of D, and grows as P moves away from the mean along each principal component axis
+
+   - The Mahala
