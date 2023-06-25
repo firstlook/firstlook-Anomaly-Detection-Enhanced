@@ -22,4 +22,4 @@
 - **特点二：马氏距离与样本在各主成分上的偏离度成正比**
    - This distance is zero if P is at the mean of D, and grows as P moves away from the mean along each principal component axis
 
-   - The Mahala
+   - The Mahalanobis distance measures the number of standard deviations fro
