@@ -24,4 +24,8 @@
 
    - The Mahalanobis distance measures the number of standard deviations from P to the mean of D. 
 
-- 参考资料：[Wikipedia : Mahalanobis distance](https://en.wikipedia.org/wiki/Mah
+- 参考资料：[Wikipedia : Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance) 
+
+---
+
+## 2. 马氏距离的计算方法及其代码
