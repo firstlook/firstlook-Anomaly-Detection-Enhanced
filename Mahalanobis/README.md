@@ -32,4 +32,9 @@
 #### 2.1 Python代码实现：[mahal_dist](./mahal_dist.py) 
 
 #### 2.2 计算样本点x距离样本集中心的马氏距离公式   
-![马氏距离](./Pics/mahal_dist
+![马氏距离](./Pics/mahal_dist.jpg)
+
+---
+
+## 3. 马氏距离的变体及其代码实现   
+#### 3.1 Python代码实现： [maha
