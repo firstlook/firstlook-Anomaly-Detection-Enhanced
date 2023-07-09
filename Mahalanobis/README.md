@@ -37,4 +37,6 @@
 ---
 
 ## 3. 马氏距离的变体及其代码实现   
-#### 3.1 Python代码实现： [maha
+#### 3.1 Python代码实现： [mahal_dist_variant](./mahal_dist_variant.py)
+
+####
