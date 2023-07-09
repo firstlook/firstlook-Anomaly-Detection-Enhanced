@@ -39,4 +39,4 @@
 ## 3. 马氏距离的变体及其代码实现   
 #### 3.1 Python代码实现： [mahal_dist_variant](./mahal_dist_variant.py)
 
-#### 3.2 论文出处： [A Novel Anomaly Detection Scheme B
+#### 3.2 论文出处： [A Novel Anomaly Detection Scheme Based on Principal Component Classifier](https://github.com/Albertsr/
