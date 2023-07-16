@@ -40,3 +40,7 @@
 #### 3.1 Python代码实现： [mahal_dist_variant](./mahal_dist_variant.py)
 
 #### 3.2 论文出处： [A Novel Anomaly Detection Scheme Based on Principal Component Classifier](https://github.com/Albertsr/Anomaly-Detection/blob/master/UnSupervised-Based%20on%20PCA/Papers/A%20Novel%20Anomaly%20Detection%20Scheme%20Based%20on%20Principal%20Component%20Classifier.pdf) 
+
+#### 3.3 计算方法
+
+  ![马氏距离变体](./Pics/%E9%A9%AC%E6%B0%8F%E8%B7%
