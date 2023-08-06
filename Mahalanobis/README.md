@@ -70,4 +70,4 @@
   - 正常样本服从标准正态分布，异常样本由两组异常样本子集构成，分别服从伽玛分布、指数分布
   - 更多细节请查阅上述验证代码
   
-   ![Mahdist_verify_result](./Pics/Mahdist_verify_result.jp
+   ![Mahdist_verify_result](./Pics/Mahdist_verify_result.jpg)
