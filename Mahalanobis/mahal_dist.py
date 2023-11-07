@@ -12,4 +12,7 @@ def mahal_dist(matrix):
     
     # 求协方差矩阵及其逆矩阵
     cov_matrix = np.cov(matrix, rowvar=False, ddof=1)
-    cov_matrix_inv = LA.
+    cov_matrix_inv = LA.inv(cov_matrix)  
+
+    # 求单个样本向量与样本中心的马氏距离
+    def md_
