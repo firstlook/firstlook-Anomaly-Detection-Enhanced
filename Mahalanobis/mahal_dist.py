@@ -9,3 +9,6 @@ def mahal_dist(matrix):
     matrix_mean = np.mean(matrix, axis=0)
     # 计算各样本与中心向量之间的差异
     delta = matrix - matrix_mean
+    
+    # 求协方差矩阵及其逆矩阵
+    cov_matrix = np.cov(
