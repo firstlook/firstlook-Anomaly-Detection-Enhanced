@@ -11,4 +11,5 @@ def mahal_dist(matrix):
     delta = matrix - matrix_mean
     
     # 求协方差矩阵及其逆矩阵
-    cov_matrix = np.cov(
+    cov_matrix = np.cov(matrix, rowvar=False, ddof=1)
+    cov_matrix_inv = LA.
