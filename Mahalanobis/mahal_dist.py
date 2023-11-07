@@ -15,4 +15,5 @@ def mahal_dist(matrix):
     cov_matrix_inv = LA.inv(cov_matrix)  
 
     # 求单个样本向量与样本中心的马氏距离
-    def md_
+    def md_vector(vector):        
+        inner_prod =
