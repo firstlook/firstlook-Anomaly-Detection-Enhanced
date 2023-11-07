@@ -1,4 +1,8 @@
 
 
 import numpy as np
-f
+from numpy import linalg as LA
+
+
+def mahal_dist(matrix):
+   
