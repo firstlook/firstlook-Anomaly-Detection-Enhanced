@@ -18,4 +18,7 @@ def mahal_dist(matrix):
     def md_vector(vector):        
         inner_prod = np.dot(vector, cov_matrix_inv)
         inner_product = np.dot(inner_prod, vector)
-        dist = np.sqrt(inne
+        dist = np.sqrt(inner_product)
+        return dist
+    
+    # 求矩阵中所有样本与中心之
