@@ -5,4 +5,6 @@ from numpy import linalg as LA
 from sklearn.preprocessing import StandardScaler 
 
 
-def mahal_dist_variant(ma
+def mahal_dist_variant(matrix):
+    # 将数据集标准化
+    matrix = StandardScaler().fit_transform
