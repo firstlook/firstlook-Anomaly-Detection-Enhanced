@@ -21,4 +21,5 @@ def mahal_dist(matrix):
         dist = np.sqrt(inner_product)
         return dist
     
-    # 求矩阵中所有样本与中心之
+    # 求矩阵中所有样本与中心之间的马氏距离
+    mahal_dist = np.apply_along_axis(arr=delta, axis=
