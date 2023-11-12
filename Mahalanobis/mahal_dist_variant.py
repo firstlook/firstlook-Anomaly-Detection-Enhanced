@@ -15,4 +15,5 @@ def mahal_dist_variant(matrix):
     # 函数get_score用于返回数据集在单个主成分上的分数
     # 参数pc_idx表示主成分的索引
     def get_score(pc_idx):
-        # eigen_ve
+        # eigen_vectors[pc_idx]表示第idx个主成分构成的列向量
+       
