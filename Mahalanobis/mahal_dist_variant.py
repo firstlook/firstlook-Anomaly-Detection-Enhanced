@@ -18,4 +18,6 @@ def mahal_dist_variant(matrix):
         # eigen_vectors[pc_idx]表示第idx个主成分构成的列向量
         inner_product = np.dot(matrix, eigen_vectors[pc_idx])
         score = np.square(inner_product) / eigen_values[pc_idx]
-        return sco
+        return score
+    # 返回训练集每一个样本在所有主成分上的分数，并分别求和
+    mahal_dist = s
