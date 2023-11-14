@@ -20,4 +20,5 @@ def mahal_dist_variant(matrix):
         score = np.square(inner_product) / eigen_values[pc_idx]
         return score
     # 返回训练集每一个样本在所有主成分上的分数，并分别求和
-    mahal_dist = s
+    mahal_dist = sum(map(get_score, range(len(eigen_values))))
+    retu
