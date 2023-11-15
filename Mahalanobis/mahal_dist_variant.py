@@ -21,4 +21,4 @@ def mahal_dist_variant(matrix):
         return score
     # 返回训练集每一个样本在所有主成分上的分数，并分别求和
     mahal_dist = sum(map(get_score, range(len(eigen_values))))
-    retu
+    return mahal_dist
