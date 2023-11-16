@@ -10,4 +10,4 @@ from utils.experiment import train_model
 parser = argparse.ArgumentParser(description='Automahalanobis experiment')
 
 # Autoencoder args
-parser.add_a
+parser.add_argument('--mahalanobis', dest='mahalanobis', action
