@@ -12,4 +12,5 @@ parser = argparse.ArgumentParser(description='Automahalanobis experiment')
 # Autoencoder args
 parser.add_argument('--mahalanobis', dest='mahalanobis', action='store_true')
 parser.set_defaults(mahalanobis=False)
-parser.add_argument('--mahalanobis_cov_dec
+parser.add_argument('--mahalanobis_cov_decay', type=float, default=1E-4)
+parser.add_argument('--
