@@ -18,4 +18,7 @@ parser.add_argument('--distort_inputs', dest='distort_inputs',
 parser.set_defaults(distort_inputs=False)
 parser.add_argument('--distort_targets', dest='distort_targets',
                     action='store_true')
-parser.set_defaults(distort_targe
+parser.set_defaults(distort_targets=False)
+
+# Dataset args
+parser.add_argument('--datase
