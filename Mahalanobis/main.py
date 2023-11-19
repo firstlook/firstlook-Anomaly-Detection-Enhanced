@@ -22,4 +22,5 @@ parser.set_defaults(distort_targets=False)
 
 # Dataset args
 parser.add_argument('--dataset_name', type=str, default='forest_cover',
-                    
+                    help='name of the dataset')
+parser.add_argument('--
