@@ -24,4 +24,7 @@ parser.set_defaults(distort_targets=False)
 parser.add_argument('--dataset_name', type=str, default='forest_cover',
                     help='name of the dataset')
 parser.add_argument('--test_prop', type=str, default=0.2)
-parser.add_argument('
+parser.add_argument('--val_prop', type=str, default=0.2)
+
+# Training args
+parser.a
