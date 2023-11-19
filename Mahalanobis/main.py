@@ -17,4 +17,5 @@ parser.add_argument('--distort_inputs', dest='distort_inputs',
                     action='store_true')
 parser.set_defaults(distort_inputs=False)
 parser.add_argument('--distort_targets', dest='distort_targets',
-                    act
+                    action='store_true')
+parser.set_defaults(distort_targe
