@@ -21,4 +21,5 @@ parser.add_argument('--distort_targets', dest='distort_targets',
 parser.set_defaults(distort_targets=False)
 
 # Dataset args
-parser.add_argument('--datase
+parser.add_argument('--dataset_name', type=str, default='forest_cover',
+                    
