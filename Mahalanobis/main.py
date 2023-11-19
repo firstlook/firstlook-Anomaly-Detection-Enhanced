@@ -15,4 +15,5 @@ parser.set_defaults(mahalanobis=False)
 parser.add_argument('--mahalanobis_cov_decay', type=float, default=1E-4)
 parser.add_argument('--distort_inputs', dest='distort_inputs',
                     action='store_true')
-parser.set_defaults(distort_in
+parser.set_defaults(distort_inputs=False)
+parser.add_argument('--distort_targ
