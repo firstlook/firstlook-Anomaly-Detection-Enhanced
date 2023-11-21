@@ -28,4 +28,4 @@ parser.add_argument('--val_prop', type=str, default=0.2)
 
 # Training args
 parser.add_argument('--n_epochs', type=int, default=500)
-par
+parser.add_argument('--batch_size', type=int, defau
