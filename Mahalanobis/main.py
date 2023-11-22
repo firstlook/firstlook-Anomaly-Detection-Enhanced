@@ -31,4 +31,5 @@ parser.add_argument('--n_epochs', type=int, default=500)
 parser.add_argument('--batch_size', type=int, default=512)
 parser.add_argument('--no_adam',  dest='adam', action='store_false',
                     help='boolean whether to not use adam optimizer but SGD with momentum')
-parser.set_defaults(
+parser.set_defaults(adam=True)
+parser.add_argument('--no_cuda', de
