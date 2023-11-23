@@ -33,4 +33,5 @@ parser.add_argument('--no_adam',  dest='adam', action='store_false',
                     help='boolean whether to not use adam optimizer but SGD with momentum')
 parser.set_defaults(adam=True)
 parser.add_argument('--no_cuda', dest='cuda', action='store_false')
-parser.set_defaults(cuda
+parser.set_defaults(cuda=True)
+parser.add_argument('--no_tensorboard', dest='tensorb
