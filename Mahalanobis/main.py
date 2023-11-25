@@ -34,4 +34,5 @@ parser.add_argument('--no_adam',  dest='adam', action='store_false',
 parser.set_defaults(adam=True)
 parser.add_argument('--no_cuda', dest='cuda', action='store_false')
 parser.set_defaults(cuda=True)
-parser.add_argument('--no_tensorboard', dest='tensorb
+parser.add_argument('--no_tensorboard', dest='tensorboard', action='store_false')
+parser.set_defaults(tenso
