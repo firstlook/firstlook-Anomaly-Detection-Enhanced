@@ -39,4 +39,5 @@ parser.set_defaults(tensorboard=True)
 
 # Collect args and kwargs
 args = parser.parse_args()
-args.cuda = args.cuda if torch.cuda.is_a
+args.cuda = args.cuda if torch.cuda.is_available() else False
+kwargs = {'num_workers': 1, 'pin_memory': True
