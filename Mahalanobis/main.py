@@ -44,4 +44,4 @@ kwargs = {'num_workers': 1, 'pin_memory': True} if args.cuda else {}
 
 # Set model name
 args.model_name = 'ae'
-args.model_name += '-m
+args.model_name += '-mahalanobis' if args.mahalanobis else '-vanilla
