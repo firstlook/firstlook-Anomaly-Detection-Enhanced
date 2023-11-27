@@ -45,4 +45,5 @@ kwargs = {'num_workers': 1, 'pin_memory': True} if args.cuda else {}
 # Set model name
 args.model_name = 'ae'
 args.model_name += '-mahalanobis' if args.mahalanobis else '-vanilla'
-args.model_name += '-distortinputs' if args.distort_i
+args.model_name += '-distortinputs' if args.distort_inputs else ''
+args.model_name += '-distorttargets' if
