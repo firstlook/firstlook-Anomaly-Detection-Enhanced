@@ -59,4 +59,5 @@ if __name__ == '__main__':
                         args.mahalanobis_cov_decay, args.distort_inputs)
     model.double()
 
-    # Determine device and c
+    # Determine device and copy model and scaler
+    device = torch.device("cuda:0" if a
