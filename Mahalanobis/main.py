@@ -52,4 +52,7 @@ if __name__ == '__main__':
 
     # Load data
     train_loader, val_loader, test_loader, scaler, model_args = \
-        load_dataset(args, **kwarg
+        load_dataset(args, **kwargs)
+
+    # Construct model and cast to double
+    model =
