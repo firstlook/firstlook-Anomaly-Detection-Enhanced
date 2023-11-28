@@ -60,4 +60,6 @@ if __name__ == '__main__':
     model.double()
 
     # Determine device and copy model and scaler
-    device = torch.device("cuda:0" if a
+    device = torch.device("cuda:0" if args.cuda else "cpu")
+    model.to(device)
+    scaler.to(de
