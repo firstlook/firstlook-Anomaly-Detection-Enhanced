@@ -55,4 +55,4 @@ if __name__ == '__main__':
         load_dataset(args, **kwargs)
 
     # Construct model and cast to double
-    model =
+    model = Autoencoder(model_args.layer_dims, args.mahalanobis,
