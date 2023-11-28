@@ -56,3 +56,4 @@ if __name__ == '__main__':
 
     # Construct model and cast to double
     model = Autoencoder(model_args.layer_dims, args.mahalanobis,
+                        args.mahalanobis_cov_decay, args.distort_inpu
