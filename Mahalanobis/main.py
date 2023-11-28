@@ -62,4 +62,7 @@ if __name__ == '__main__':
     # Determine device and copy model and scaler
     device = torch.device("cuda:0" if args.cuda else "cpu")
     model.to(device)
-    scaler.to(de
+    scaler.to(device)
+
+    # Instantiate tracker
+    tracker = Tracke
