@@ -51,4 +51,5 @@ args.model_name += '-distorttargets' if args.distort_targets else ''
 if __name__ == '__main__':
 
     # Load data
-    train_loader, val_loader, test_loader,
+    train_loader, val_loader, test_loader, scaler, model_args = \
+        load_dataset(args, **kwarg
