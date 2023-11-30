@@ -68,4 +68,8 @@ if __name__ == '__main__':
     tracker = Tracker(args)
 
     # Construct loss function
-    criterion = torch
+    criterion = torch.nn.L1Loss()
+
+    # Construct optimizer
+    if args.adam:
+  
