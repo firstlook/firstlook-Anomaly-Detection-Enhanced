@@ -65,4 +65,7 @@ if __name__ == '__main__':
     scaler.to(device)
 
     # Instantiate tracker
-    tracker = Tracke
+    tracker = Tracker(args)
+
+    # Construct loss function
+    criterion = torch
