@@ -77,4 +77,5 @@ if __name__ == '__main__':
         optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9,
                                     nesterov=False)
 
-    # Train the m
+    # Train the model
+    model, epoch = train_model(model, criterion, o
