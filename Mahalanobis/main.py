@@ -74,4 +74,5 @@ if __name__ == '__main__':
     if args.adam:
         optimizer = torch.optim.Adam(model.parameters())
     else:
-        optimizer = torch.optim.SGD(model.
+        optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9,
+                
