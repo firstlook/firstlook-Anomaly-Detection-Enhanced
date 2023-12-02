@@ -79,4 +79,6 @@ if __name__ == '__main__':
 
     # Train the model
     model, epoch = train_model(model, criterion, optimizer, train_loader,
-                 
+                               val_loader, scaler, tracker, args, device)
+
+    p
