@@ -78,4 +78,5 @@ if __name__ == '__main__':
                                     nesterov=False)
 
     # Train the model
-    model, epoch = train_model(model, criterion, o
+    model, epoch = train_model(model, criterion, optimizer, train_loader,
+                 
