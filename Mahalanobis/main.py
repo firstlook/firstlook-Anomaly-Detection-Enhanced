@@ -81,4 +81,6 @@ if __name__ == '__main__':
     model, epoch = train_model(model, criterion, optimizer, train_loader,
                                val_loader, scaler, tracker, args, device)
 
-    p
+    print("Trained model on device: {}".format(device))
+
+    
