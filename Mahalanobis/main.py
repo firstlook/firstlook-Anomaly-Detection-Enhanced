@@ -83,4 +83,6 @@ if __name__ == '__main__':
 
     print("Trained model on device: {}".format(device))
 
-    
+    state = {
+        'epoch': epoch,
+        'state_dict': mo
