@@ -86,4 +86,6 @@ if __name__ == '__main__':
     state = {
         'epoch': epoch,
         'state_dict': model.state_dict(),
-        'optimizer': optimi
+        'optimizer': optimizer.state_dict()
+    }
+    torch.save(state, track
