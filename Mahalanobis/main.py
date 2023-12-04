@@ -85,4 +85,5 @@ if __name__ == '__main__':
 
     state = {
         'epoch': epoch,
-        'state_dict': mo
+        'state_dict': model.state_dict(),
+        'optimizer': optimi
