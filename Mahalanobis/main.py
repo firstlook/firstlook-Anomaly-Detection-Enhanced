@@ -88,4 +88,7 @@ if __name__ == '__main__':
         'state_dict': model.state_dict(),
         'optimizer': optimizer.state_dict()
     }
-    torch.save(state, track
+    torch.save(state, tracker.dir+'model_state')
+
+    # state = torch.load()
+    #
