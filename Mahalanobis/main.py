@@ -92,4 +92,6 @@ if __name__ == '__main__':
 
     # state = torch.load()
     # model.load_state_dict(state['state_dict'])
-    # optim
+    # optimizer.load_state_dict(state['optimizer'])
+
+
