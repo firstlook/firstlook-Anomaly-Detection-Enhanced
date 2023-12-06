@@ -91,4 +91,5 @@ if __name__ == '__main__':
     torch.save(state, tracker.dir+'model_state')
 
     # state = torch.load()
-    #
+    # model.load_state_dict(state['state_dict'])
+    # optim
