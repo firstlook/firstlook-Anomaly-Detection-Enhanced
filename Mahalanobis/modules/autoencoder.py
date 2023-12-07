@@ -9,4 +9,5 @@ from modules.mahalanobis import MahalanobisLayer
 
 class Autoencoder(nn.Module):
 
-    def __init__(s
+    def __init__(self, layer_dims, mahalanobis=False,
+          
