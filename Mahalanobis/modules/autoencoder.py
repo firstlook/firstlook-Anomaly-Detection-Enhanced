@@ -15,4 +15,5 @@ class Autoencoder(nn.Module):
 
         self.layer_dims = layer_dims
 
-        self.encoding_layers =
+        self.encoding_layers = torch.nn.Sequential(
+            nn.Linear
