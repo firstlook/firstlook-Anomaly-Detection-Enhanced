@@ -21,4 +21,5 @@ class Autoencoder(nn.Module):
             nn.Linear(layer_dims[1], layer_dims[2])   # Compression layer
         )
 
-     
+        self.decoding_layers = torch.nn.Sequential(
+            nn.Linear(la
