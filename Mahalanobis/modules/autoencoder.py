@@ -27,4 +27,7 @@ class Autoencoder(nn.Module):
             nn.Linear(layer_dims[3], layer_dims[4])   # Output layer
         )
 
-        self.mahalanobis = mahalanob
+        self.mahalanobis = mahalanobis
+
+        if mahalanobis:
+            self.m
