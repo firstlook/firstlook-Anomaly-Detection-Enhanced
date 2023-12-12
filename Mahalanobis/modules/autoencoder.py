@@ -23,4 +23,5 @@ class Autoencoder(nn.Module):
 
         self.decoding_layers = torch.nn.Sequential(
             nn.Linear(layer_dims[2], layer_dims[3]),  # 3rd hidden layer
-            nn.Tanh(),                                # 
+            nn.Tanh(),                                # 3d hidden layer
+            nn.Linear(layer_dims[3], layer_dims[4])   # Out
