@@ -31,4 +31,4 @@ class Autoencoder(nn.Module):
 
         if mahalanobis:
             self.mahalanobis_layer = MahalanobisLayer(layer_dims[0],
-         
+                                                     
