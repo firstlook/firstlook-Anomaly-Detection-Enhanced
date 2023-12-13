@@ -33,4 +33,7 @@ class Autoencoder(nn.Module):
             self.mahalanobis_layer = MahalanobisLayer(layer_dims[0],
                                                       mahalanobis_cov_decay)
 
-        self.distort_input = d
+        self.distort_input = distort_inputs
+
+    def forward(self, x):
+        x_in = x + torch.randn_
