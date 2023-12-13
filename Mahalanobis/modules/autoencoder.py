@@ -31,4 +31,6 @@ class Autoencoder(nn.Module):
 
         if mahalanobis:
             self.mahalanobis_layer = MahalanobisLayer(layer_dims[0],
-                                                     
+                                                      mahalanobis_cov_decay)
+
+        self.distort_input = d
