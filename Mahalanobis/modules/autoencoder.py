@@ -36,4 +36,5 @@ class Autoencoder(nn.Module):
         self.distort_input = distort_inputs
 
     def forward(self, x):
-        x_in = x + torch.randn_
+        x_in = x + torch.randn_like(x) if self.distort_input else x
+        x_enc
