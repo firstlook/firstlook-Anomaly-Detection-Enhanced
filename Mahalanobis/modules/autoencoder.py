@@ -38,4 +38,5 @@ class Autoencoder(nn.Module):
     def forward(self, x):
         x_in = x + torch.randn_like(x) if self.distort_input else x
         x_enc = self.encoding_layers(x_in)
-        x_fit = self.
+        x_fit = self.decoding_layers(x_enc)
+        if sel
