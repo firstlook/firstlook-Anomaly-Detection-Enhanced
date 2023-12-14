@@ -44,4 +44,7 @@ class Autoencoder(nn.Module):
         return x_fit
 
     def encode(self, x):
-       
+        return self.encoding_layers(x)
+
+    def decode(self, x):
+    
