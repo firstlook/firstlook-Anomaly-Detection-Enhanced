@@ -57,4 +57,6 @@ class Autoencoder(nn.Module):
 
 if __name__ == "__main__":
     batch_size = 128
-    layer_dim
+    layer_dims = 10, 30, 5, 30, 10
+
+    # Create rand
