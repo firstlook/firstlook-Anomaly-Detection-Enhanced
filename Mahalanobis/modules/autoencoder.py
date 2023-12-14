@@ -40,4 +40,8 @@ class Autoencoder(nn.Module):
         x_enc = self.encoding_layers(x_in)
         x_fit = self.decoding_layers(x_enc)
         if self.mahalanobis:
-            x_fit = self.mahalanobis_la
+            x_fit = self.mahalanobis_layer(x, x_fit)
+        return x_fit
+
+    def encode(self, x):
+       
