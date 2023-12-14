@@ -51,4 +51,8 @@ class Autoencoder(nn.Module):
 
     def reconstruct(self, x):
         x = self.encoding_layers(x)
- 
+        x = self.decoding_layers(x)
+        return x
+
+
+if
