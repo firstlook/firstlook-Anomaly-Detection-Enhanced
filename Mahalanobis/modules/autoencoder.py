@@ -55,4 +55,6 @@ class Autoencoder(nn.Module):
         return x
 
 
-if
+if __name__ == "__main__":
+    batch_size = 128
+    layer_dim
