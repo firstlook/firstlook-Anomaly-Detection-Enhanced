@@ -63,4 +63,6 @@ if __name__ == "__main__":
     x = torch.Tensor(torch.randn(batch_size, layer_dims[0]))
 
     # Construct our model by instantiating the class defined above
-    model = Autoencoder(layer_dims, 
+    model = Autoencoder(layer_dims, True, 0.001, True)
+
+    # Select device to train model on 
