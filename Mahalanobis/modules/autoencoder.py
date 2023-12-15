@@ -69,4 +69,7 @@ if __name__ == "__main__":
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
-    # Copy d
+    # Copy data to device
+    x = x.to(device)
+
+    # Construct our loss functi
