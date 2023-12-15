@@ -62,4 +62,4 @@ if __name__ == "__main__":
     # Create random Tensors to hold inputs and outputs
     x = torch.Tensor(torch.randn(batch_size, layer_dims[0]))
 
-    #
+    # Construct our model by instantiating the class defined abov
