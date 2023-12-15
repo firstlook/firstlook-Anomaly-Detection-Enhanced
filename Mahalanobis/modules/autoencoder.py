@@ -65,4 +65,5 @@ if __name__ == "__main__":
     # Construct our model by instantiating the class defined above
     model = Autoencoder(layer_dims, True, 0.001, True)
 
-    # Select device to train model on 
+    # Select device to train model on and copy model to device
+    device = torch.device("cuda:0" if tor
