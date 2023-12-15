@@ -60,4 +60,6 @@ if __name__ == "__main__":
     layer_dims = 10, 30, 5, 30, 10
 
     # Create random Tensors to hold inputs and outputs
-    x = torch.Ten
+    x = torch.Tensor(torch.randn(batch_size, layer_dims[0]))
+
+    #
