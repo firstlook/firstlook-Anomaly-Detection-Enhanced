@@ -59,4 +59,5 @@ if __name__ == "__main__":
     batch_size = 128
     layer_dims = 10, 30, 5, 30, 10
 
-    # Create rand
+    # Create random Tensors to hold inputs and outputs
+    x = torch.Ten
