@@ -80,4 +80,5 @@ if __name__ == "__main__":
         # Forward pass: Compute predicted y by passing x to the model
         errors = model(x)
 
-        # Comput
+        # Compute and print loss
+        loss = criterion(errors, torch.
