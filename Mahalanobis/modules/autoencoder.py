@@ -72,4 +72,6 @@ if __name__ == "__main__":
     # Copy data to device
     x = x.to(device)
 
-    # Construct our loss functi
+    # Construct our loss function and an optimizer
+    criterion = nn.L1Loss()
+   
