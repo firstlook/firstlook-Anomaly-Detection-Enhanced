@@ -74,4 +74,7 @@ if __name__ == "__main__":
 
     # Construct our loss function and an optimizer
     criterion = nn.L1Loss()
-    optimizer = torch.optim.SGD(model.parameters(), lr
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0)
+
+    for t in range(2000):
+       
