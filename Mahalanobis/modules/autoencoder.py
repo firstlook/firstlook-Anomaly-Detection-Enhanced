@@ -77,4 +77,4 @@ if __name__ == "__main__":
     optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0)
 
     for t in range(2000):
-       
+        # Forward pass: Compute predicted y by
