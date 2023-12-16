@@ -81,4 +81,5 @@ if __name__ == "__main__":
         errors = model(x)
 
         # Compute and print loss
-        loss = criterion(errors, torch.
+        loss = criterion(errors, torch.zeros(errors.size(), device=device))
+        print(t, l
