@@ -82,4 +82,6 @@ if __name__ == "__main__":
 
         # Compute and print loss
         loss = criterion(errors, torch.zeros(errors.size(), device=device))
-        print(t, l
+        print(t, loss.item())
+
+        # Zero gradients, perform a backward pas
