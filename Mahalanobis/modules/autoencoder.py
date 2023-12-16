@@ -84,4 +84,5 @@ if __name__ == "__main__":
         loss = criterion(errors, torch.zeros(errors.size(), device=device))
         print(t, loss.item())
 
-        # Zero gradients, perform a backward pas
+        # Zero gradients, perform a backward pass, and update the weights.
+        optimizer.zero_grad(
