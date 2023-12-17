@@ -85,4 +85,6 @@ if __name__ == "__main__":
         print(t, loss.item())
 
         # Zero gradients, perform a backward pass, and update the weights.
-        optimizer.zero_grad(
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step
