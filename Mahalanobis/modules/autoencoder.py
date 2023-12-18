@@ -91,4 +91,5 @@ if __name__ == "__main__":
 
         if model.mahalanobis_layer:
             with torch.no_grad():
-                x_fit = 
+                x_fit = model.reconstruct(x)
+                model.ma
