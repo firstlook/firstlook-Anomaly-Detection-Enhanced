@@ -90,4 +90,5 @@ if __name__ == "__main__":
         optimizer.step()
 
         if model.mahalanobis_layer:
-         
+            with torch.no_grad():
+                x_fit = 
