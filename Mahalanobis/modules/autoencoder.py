@@ -97,4 +97,6 @@ if __name__ == "__main__":
     print("Trained model on device: {}".format(device))
 
     print(errors)
-    
+    print(x)
+    print(model.reconstruct(x))
+   
