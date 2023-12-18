@@ -94,4 +94,7 @@ if __name__ == "__main__":
                 x_fit = model.reconstruct(x)
                 model.mahalanobis_layer.update(x, x_fit)
 
-    print("Trained model 
+    print("Trained model on device: {}".format(device))
+
+    print(errors)
+    
