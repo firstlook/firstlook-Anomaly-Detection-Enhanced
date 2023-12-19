@@ -1,3 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Mahalanobis m
+Mahalanobis module
+--------------------------
+"""
+import torch
+impo
