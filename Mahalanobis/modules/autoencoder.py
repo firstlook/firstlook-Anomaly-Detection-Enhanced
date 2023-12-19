@@ -99,4 +99,5 @@ if __name__ == "__main__":
     print(errors)
     print(x)
     print(model.reconstruct(x))
-   
+    if model.mahalanobis:
+        print(model.mahalan
