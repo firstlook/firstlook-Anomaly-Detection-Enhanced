@@ -100,4 +100,5 @@ if __name__ == "__main__":
     print(x)
     print(model.reconstruct(x))
     if model.mahalanobis:
-        print(model.mahalan
+        print(model.mahalanobis_layer.S)
+        print(model.mahalanobis_
