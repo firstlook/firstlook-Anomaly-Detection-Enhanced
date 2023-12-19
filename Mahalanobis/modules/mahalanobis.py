@@ -4,4 +4,6 @@ Mahalanobis module
 --------------------------
 """
 import torch
-impo
+import torch.nn as nn
+
+class MahalanobisLayer(nn.Module):
