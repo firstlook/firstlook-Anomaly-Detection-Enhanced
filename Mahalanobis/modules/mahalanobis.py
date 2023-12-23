@@ -14,4 +14,6 @@ class MahalanobisLayer(nn.Module):
         self.register_buffer('S_inv', torch.eye(dim))
         self.decay = decay
 
-    def forward
+    def forward(self, x, x_fit):
+        """
+        Calculates the sq
