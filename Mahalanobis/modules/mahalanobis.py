@@ -11,4 +11,5 @@ class MahalanobisLayer(nn.Module):
     def __init__(self, dim, decay = 0.1):
         super(MahalanobisLayer, self).__init__()
         self.register_buffer('S', torch.eye(dim))
-   
+        self.register_buffer('S_inv', torch.eye(dim))
+       
