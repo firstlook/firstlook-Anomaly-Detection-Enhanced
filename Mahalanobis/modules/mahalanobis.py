@@ -16,4 +16,7 @@ class MahalanobisLayer(nn.Module):
 
     def forward(self, x, x_fit):
         """
-        Calculates the sq
+        Calculates the squared Mahalanobis distance between x and x_fit
+        """
+
+ 
