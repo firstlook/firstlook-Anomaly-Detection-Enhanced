@@ -19,4 +19,5 @@ class MahalanobisLayer(nn.Module):
         Calculates the squared Mahalanobis distance between x and x_fit
         """
 
- 
+        delta = x - x_fit
+        m = torch.mm(torch.mm(delta, sel
