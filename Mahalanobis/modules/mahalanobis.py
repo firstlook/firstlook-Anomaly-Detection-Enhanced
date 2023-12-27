@@ -20,4 +20,7 @@ class MahalanobisLayer(nn.Module):
         """
 
         delta = x - x_fit
-        m = torch.mm(torch.mm(delta, sel
+        m = torch.mm(torch.mm(delta, self.S_inv), delta.t())
+        return torch.diag(m)
+
+    def cov(
