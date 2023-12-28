@@ -26,3 +26,6 @@ class MahalanobisLayer(nn.Module):
     def cov(self, x):
         x -= torch.mean(x, dim=0)
         return 1 / (x.size(0) - 1) * x.t().mm(x)
+
+    def update(self, X, X_fit):
+        delta = X - X_fi
