@@ -35,4 +35,7 @@ class MahalanobisLayer(nn.Module):
 if __name__ == "__main__":
 
     from scipy.spatial import distance
-    
+    import numpy as np
+
+    # Some example data for testing
+    v  =
