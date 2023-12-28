@@ -23,4 +23,5 @@ class MahalanobisLayer(nn.Module):
         m = torch.mm(torch.mm(delta, self.S_inv), delta.t())
         return torch.diag(m)
 
-    def cov(
+    def cov(self, x):
+        x -= torch.mean
