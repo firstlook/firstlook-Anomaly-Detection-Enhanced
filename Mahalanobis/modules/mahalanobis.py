@@ -32,4 +32,7 @@ class MahalanobisLayer(nn.Module):
         self.S = (1 - self.decay) * self.S + self.decay * self.cov(delta)
         self.S_inv = torch.pinverse(self.S)
 
-if __name__ == "__main
+if __name__ == "__main__":
+
+    from scipy.spatial import distance
+    
