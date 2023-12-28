@@ -29,4 +29,5 @@ class MahalanobisLayer(nn.Module):
 
     def update(self, X, X_fit):
         delta = X - X_fit
-        self.S = (1 - self.decay) * self
+        self.S = (1 - self.decay) * self.S + self.decay * self.cov(delta)
+        self.
