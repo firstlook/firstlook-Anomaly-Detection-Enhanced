@@ -38,4 +38,6 @@ if __name__ == "__main__":
     import numpy as np
 
     # Some example data for testing
-    v  = torch.Tensor([[1, 0.5, 0.5], [0.5, 1, 0.5], [0.5, 0.5, 1
+    v  = torch.Tensor([[1, 0.5, 0.5], [0.5, 1, 0.5], [0.5, 0.5, 1]])
+    iv = torch.inverse(v)
+    X1 = torch.Tensor([[1, 0, 0], [
