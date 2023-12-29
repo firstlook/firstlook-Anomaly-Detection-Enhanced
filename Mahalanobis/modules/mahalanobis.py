@@ -41,4 +41,6 @@ if __name__ == "__main__":
     v  = torch.Tensor([[1, 0.5, 0.5], [0.5, 1, 0.5], [0.5, 0.5, 1]])
     iv = torch.inverse(v)
     X1 = torch.Tensor([[1, 0, 0], [0, 1, 0], [0, 2, 0]])
-    X2 = torch.Tensor([[0, 1
+    X2 = torch.Tensor([[0, 1, 0], [0, 2, 0], [0, 2, 0]])
+
+    # Squared Mahal
