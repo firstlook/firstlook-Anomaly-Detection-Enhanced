@@ -43,4 +43,5 @@ if __name__ == "__main__":
     X1 = torch.Tensor([[1, 0, 0], [0, 1, 0], [0, 2, 0]])
     X2 = torch.Tensor([[0, 1, 0], [0, 2, 0], [0, 2, 0]])
 
-    # Squared Mahal
+    # Squared Mahalanobis distance using scipy
+    scipy_dist_list = [dista
