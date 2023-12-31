@@ -47,4 +47,5 @@ if __name__ == "__main__":
     scipy_dist_list = [distance.mahalanobis(x1.numpy(), x2.numpy(), iv.numpy()) for x1, x2 in zip(X1, X2)]
     scipy_dist = np.array(scipy_dist_list)**2
 
-    # Mahalanobis distanc
+    # Mahalanobis distance pytorch implementation
+    mah_layer = Mahal
