@@ -44,4 +44,5 @@ if __name__ == "__main__":
     X2 = torch.Tensor([[0, 1, 0], [0, 2, 0], [0, 2, 0]])
 
     # Squared Mahalanobis distance using scipy
-    scipy_dist_list = [distance.mahalanobis(x1.numpy(), x2.numpy(), iv
+    scipy_dist_list = [distance.mahalanobis(x1.numpy(), x2.numpy(), iv.numpy()) for x1, x2 in zip(X1, X2)]
+    scipy_dist = 
