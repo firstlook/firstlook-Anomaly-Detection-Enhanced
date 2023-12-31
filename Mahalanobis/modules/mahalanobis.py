@@ -45,4 +45,6 @@ if __name__ == "__main__":
 
     # Squared Mahalanobis distance using scipy
     scipy_dist_list = [distance.mahalanobis(x1.numpy(), x2.numpy(), iv.numpy()) for x1, x2 in zip(X1, X2)]
-    scipy_dist = 
+    scipy_dist = np.array(scipy_dist_list)**2
+
+    # Mahalanobis distanc
