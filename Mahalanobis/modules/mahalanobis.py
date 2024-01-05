@@ -48,4 +48,7 @@ if __name__ == "__main__":
     scipy_dist = np.array(scipy_dist_list)**2
 
     # Mahalanobis distance pytorch implementation
-    mah_layer = Mahal
+    mah_layer = MahalanobisLayer(3, decay=0.99)
+    mah_layer.S_inv = iv
+
+    pytorc
