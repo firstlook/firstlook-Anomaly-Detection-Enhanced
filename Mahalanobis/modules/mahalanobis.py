@@ -51,4 +51,6 @@ if __name__ == "__main__":
     mah_layer = MahalanobisLayer(3, decay=0.99)
     mah_layer.S_inv = iv
 
-    pytorc
+    pytorch_dist = mah_layer(X1, X2)
+
+     # Check if almost eq
