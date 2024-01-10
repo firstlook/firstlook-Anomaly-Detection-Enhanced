@@ -54,4 +54,7 @@ if __name__ == "__main__":
     pytorch_dist = mah_layer(X1, X2)
 
      # Check if almost equal
-    np.testing.assert_almost_equal(scipy_di
+    np.testing.assert_almost_equal(scipy_dist, pytorch_dist.numpy())
+
+    # Covariance method
+    X
