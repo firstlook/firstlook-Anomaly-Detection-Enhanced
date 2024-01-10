@@ -57,4 +57,5 @@ if __name__ == "__main__":
     np.testing.assert_almost_equal(scipy_dist, pytorch_dist.numpy())
 
     # Covariance method
-    X
+    X = torch.rand(10, 3)
+    np_cov_X = np.cov(X.numpy(), rowvar=False)
