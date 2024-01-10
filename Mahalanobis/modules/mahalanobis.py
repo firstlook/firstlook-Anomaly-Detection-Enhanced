@@ -53,4 +53,5 @@ if __name__ == "__main__":
 
     pytorch_dist = mah_layer(X1, X2)
 
-     # Check if almost eq
+     # Check if almost equal
+    np.testing.assert_almost_equal(scipy_di
