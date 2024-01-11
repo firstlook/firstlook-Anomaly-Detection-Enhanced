@@ -59,3 +59,6 @@ if __name__ == "__main__":
     # Covariance method
     X = torch.rand(10, 3)
     np_cov_X = np.cov(X.numpy(), rowvar=False)
+    pytorch_cov_X = mah_layer.cov(X)
+
+    # Check if alm
