@@ -67,4 +67,5 @@ if __name__ == "__main__":
     # Update method
     X_fit = torch.rand(10, 3)
     delta = X - X_fit
-    np
+    np_cov_delta = np.cov(delta.numpy(), rowvar=False)
+    pytorch_cov_
