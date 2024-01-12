@@ -61,4 +61,5 @@ if __name__ == "__main__":
     np_cov_X = np.cov(X.numpy(), rowvar=False)
     pytorch_cov_X = mah_layer.cov(X)
 
-    # Check if alm
+    # Check if almost equal
+    np.testing.assert_almost_equal(np_cov_X, pytorch_cov_X
