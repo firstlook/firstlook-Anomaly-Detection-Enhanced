@@ -65,4 +65,6 @@ if __name__ == "__main__":
     np.testing.assert_almost_equal(np_cov_X, pytorch_cov_X.numpy())
 
     # Update method
-    X_fit = t
+    X_fit = torch.rand(10, 3)
+    delta = X - X_fit
+    np
