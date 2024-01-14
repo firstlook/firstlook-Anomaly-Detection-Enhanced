@@ -72,4 +72,5 @@ if __name__ == "__main__":
 
     # Check if almost equal after enough updates
     for i in range(20):
-        
+        mah_layer.update(X, X_fit)
+    np.testing.assert_
