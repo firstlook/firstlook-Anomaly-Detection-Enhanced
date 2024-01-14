@@ -68,4 +68,6 @@ if __name__ == "__main__":
     X_fit = torch.rand(10, 3)
     delta = X - X_fit
     np_cov_delta = np.cov(delta.numpy(), rowvar=False)
-    pytorch_cov_
+    pytorch_cov_delta = mah_layer.cov(delta)
+
+    # Check if almost equal after eno
