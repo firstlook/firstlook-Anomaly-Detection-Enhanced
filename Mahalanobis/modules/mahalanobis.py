@@ -73,4 +73,6 @@ if __name__ == "__main__":
     # Check if almost equal after enough updates
     for i in range(20):
         mah_layer.update(X, X_fit)
-    np.testing.assert_
+    np.testing.assert_almost_equal(np_cov_delta, mah_layer.S.numpy())
+
+    # T
