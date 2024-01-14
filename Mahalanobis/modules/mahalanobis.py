@@ -70,4 +70,6 @@ if __name__ == "__main__":
     np_cov_delta = np.cov(delta.numpy(), rowvar=False)
     pytorch_cov_delta = mah_layer.cov(delta)
 
-    # Check if almost equal after eno
+    # Check if almost equal after enough updates
+    for i in range(20):
+        
