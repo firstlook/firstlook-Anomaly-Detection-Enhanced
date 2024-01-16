@@ -76,4 +76,4 @@ if __name__ == "__main__":
     np.testing.assert_almost_equal(np_cov_delta, mah_layer.S.numpy())
 
     # Test if numpy inverse and pytorch pseudo inverse are close
-    np.testing.assert_almost_equal(np.linalg.inv(np_cov
+    np.testing.assert_almost_equal(np.linalg.inv(np_cov_delta), mah_layer.S_inv.numpy(), decimal=5)
