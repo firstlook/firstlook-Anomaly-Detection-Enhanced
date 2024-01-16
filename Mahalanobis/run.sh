@@ -3,4 +3,5 @@
 source activate pytorch
 
 # Forest cover
-python3 main.py --dataset_
+python3 main.py --dataset_name forest_cover
+python3 main.py --mahalanobis --data
