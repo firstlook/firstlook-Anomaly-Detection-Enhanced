@@ -75,4 +75,4 @@ if __name__ == "__main__":
         mah_layer.update(X, X_fit)
     np.testing.assert_almost_equal(np_cov_delta, mah_layer.S.numpy())
 
-    # T
+    # Test if numpy inverse and pytorch pseudo inverse are clos
