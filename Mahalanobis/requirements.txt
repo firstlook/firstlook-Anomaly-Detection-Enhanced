@@ -51,3 +51,23 @@ dependencies:
   - python=3.7.0=h6e4f718_3
   - python-dateutil=2.7.5=py37_0
   - pytz=2018.7=py37_0
+  - qt=5.9.6=h8703b6f_2
+  - readline=7.0=h7b6447c_5
+  - scikit-learn=0.20.0=py37h4989274_1
+  - scipy=1.1.0=py37hfa4b5c9_1
+  - seaborn=0.9.0=py37_0
+  - setuptools=40.5.0=py37_0
+  - sip=4.19.8=py37hf484d3e_0
+  - six=1.11.0=py37_1
+  - sqlite=3.25.2=h7b6447c_0
+  - statsmodels=0.9.0=py37h035aef0_0
+  - tk=8.6.8=hbc83047_0
+  - tornado=5.1.1=py37h7b6447c_0
+  - wheel=0.32.2=py37_0
+  - xz=5.2.4=h14c3975_4
+  - zlib=1.2.11=ha838bed_2
+  - pytorch=0.4.1=py37_py36_py35_py27__9.0.176_7.1.2_2
+  - torchvision=0.2.1=py37_1
+  - pip:
+    - torch==0.4.1.post2
+prefix: /home/bart/anaconda3/envs/pytorch
