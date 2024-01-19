@@ -11,4 +11,5 @@ python3 main.py --mahalanobis --distort_targets --dataset_name forest_cover
 # Kdd smtp
 python3 main.py --dataset_name kdd_smtp
 python3 main.py --mahalanobis --dataset_name kdd_smtp
-python3 main.py --mah
+python3 main.py --mahalanobis --distort_inputs --dataset_name kdd_smtp
+python3 mai
