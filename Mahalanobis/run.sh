@@ -16,4 +16,5 @@ python3 main.py --mahalanobis --distort_targets --dataset_name kdd_smtp
 
 # Kdd http
 python3 main.py --dataset_name kdd_http
-python3 main.py --mahalanobis --dataset_name k
+python3 main.py --mahalanobis --dataset_name kdd_http
+python3 main.py --mahalanobis --dis
