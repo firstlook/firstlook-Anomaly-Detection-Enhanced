@@ -53,3 +53,60 @@ def read_mat(path: str, transpose=True, print_dim=False):
         print('Input data dim:')
         print(' X:      {}'.format(X.shape))
         print(' labels: {}'.format(labels.shape))
+
+    return X, labels
+
+
+def generate_loaders(X, labels, args, **kwargs):
+
+    # Train validation test split
+    X, labels = np_shuffle_arrays(X, labels)
+
+    data_nrows = X.shape[0]
+    val_size = int(args.val_prop * data_nrows)
+    test_size = int(args.test_prop * data_nrows)
+
+    splits = [data_nrows - val_size - test_size, data_nrows - val_size]
+    X_train, X_val, X_test = np.split(X, splits)
+    labels_train, labels_val, labels_test = np.split(labels, splits)
+
+    # Fit scaler
+    scaler = Scaler(X_train)
+
+    # Pytorch data loaders
+    train = data_utils.TensorDataset(torch.from_numpy(X_train).double(),
+                                     torch.from_numpy(labels_train).double())
+    train_loader = data_utils.DataLoader(train,
+                                         batch_size=args.batch_size,
+                                         shuffle=True, **kwargs)
+
+    validation = data_utils.TensorDataset(torch.from_numpy(X_val).double(),
+                                          torch.from_numpy(labels_val).double())
+    val_loader = data_utils.DataLoader(validation,
+                                       batch_size=args.batch_size,
+                                       shuffle=False, **kwargs)
+
+    test = data_utils.TensorDataset(torch.from_numpy(X_test).double(),
+                                    torch.from_numpy(labels_test).double())
+    test_loader = data_utils.DataLoader(test,
+                                        batch_size=args.batch_size,
+                                        shuffle=False, **kwargs)
+
+    return train_loader, val_loader, test_loader, scaler
+
+
+def load_kdd_smtp(args, as_numpy, **kwargs):
+
+    # Set args
+    args.layer_dims = (3, 10, 2, 10, 3)
+
+    # Load data
+    X, labels = read_mat('./data/kdd_smtp/kdd_smtp.mat',
+                         transpose=True, print_dim=True)
+
+    if as_numpy:
+        return X, labels
+
+    # Split data and generate the data loaders
+    train_loader, val_loader, test_loader, scaler = \
+        generate_loaders(X, labels, args, **kwargs)
