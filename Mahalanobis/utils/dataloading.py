@@ -110,3 +110,52 @@ def load_kdd_smtp(args, as_numpy, **kwargs):
     # Split data and generate the data loaders
     train_loader, val_loader, test_loader, scaler = \
         generate_loaders(X, labels, args, **kwargs)
+
+    return train_loader, val_loader, test_loader, scaler, args
+
+
+def load_kdd_http(args, as_numpy, **kwargs):
+
+    # Set args
+    args.layer_dims = (3, 10, 2, 10, 3)
+
+    # Load data
+    X, labels = read_mat('./data/kdd_http/kdd_http.mat',
+                         transpose=True, print_dim=True)
+
+    if as_numpy:
+        return X, labels
+
+    # Split data and generate the data loaders
+    train_loader, val_loader, test_loader, scaler = \
+        generate_loaders(X, labels, args, **kwargs)
+
+    return train_loader, val_loader, test_loader, scaler, args
+
+
+def load_shuttle(args, as_numpy, **kwargs):
+
+    # Set args
+    args.layer_dims = (9, 20, 5, 20, 9)
+
+    # Load data
+    X, labels = read_mat('./data/shuttle/shuttle.mat',
+                         transpose=False, print_dim=True)
+
+    if as_numpy:
+        return X, labels
+
+    # Split data and generate the data loaders
+    train_loader, val_loader, test_loader, scaler = \
+        generate_loaders(X, labels, args, **kwargs)
+
+    return train_loader, val_loader, test_loader, scaler, args
+
+
+def load_forest_cover(args, as_numpy, **kwargs):
+
+    # Set args
+    args.layer_dims = (10, 20, 5, 20, 10)
+
+    # Load data
+    X, labels = read_mat('./data/forest_cover/forest_cover.mat',
