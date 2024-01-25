@@ -27,4 +27,4 @@ python3 main.py --mahalanobis --distort_inputs --dataset_name shuttle
 python3 main.py --mahalanobis --distort_targets --dataset_name shuttle
 
 # Exit script
-exit 
+exit 0
