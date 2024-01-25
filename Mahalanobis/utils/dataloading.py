@@ -159,3 +159,52 @@ def load_forest_cover(args, as_numpy, **kwargs):
 
     # Load data
     X, labels = read_mat('./data/forest_cover/forest_cover.mat',
+                         transpose=False, print_dim=True)
+
+    if as_numpy:
+        return X, labels
+
+    # Split data and generate the data loaders
+    train_loader, val_loader, test_loader, scaler = \
+        generate_loaders(X, labels, args, **kwargs)
+
+    return train_loader, val_loader, test_loader, scaler, args
+
+
+def load_dataset(args, **kwargs):
+    '''
+    Load torch data loaders for datasets: kdd_smtp, kdd_http
+
+    :param args: Namespace object created by argparse containing:
+        dataset_name, test_prop, val_prop, batch_size
+    :param kwargs: to be passed to torch.utils.data.DataLoader
+    :return: Tuple: train_loader, val_loader, test_loader, labels_split, args
+    '''
+    if args.dataset_name == 'kdd_smtp':
+        data_tuple = load_kdd_smtp(args, False, **kwargs)
+    elif args.dataset_name == 'kdd_http':
+        data_tuple = load_kdd_http(args, False, **kwargs)
+    elif args.dataset_name == 'shuttle':
+        data_tuple = load_shuttle(args, False, **kwargs)
+    elif args.dataset_name == 'forest_cover':
+        data_tuple = load_forest_cover(args, False, **kwargs)
+    else:
+        raise Exception('Wrong name of the dataset!')
+    return data_tuple
+
+
+if __name__ == "__main__":
+
+    X_train = np.random.randn(20, 5)
+    scaler = Scaler(X_train)
+    X_scaled = scaler.normalize(X_train)
+
+    np.testing.assert_almost_equal(np.array([0,0,0,0,0]),
+                                   np.mean(X_scaled, axis=0))
+    np.testing.assert_almost_equal(np.array([1, 1, 1, 1, 1]),
+                                   np.std(X_scaled, axis=0))
+
+    from argparse import Namespace
+    data_args = Namespace(dataset_name='forest_cover',
+                          test_prop=0.2,
+                          val_prop=0.2,
