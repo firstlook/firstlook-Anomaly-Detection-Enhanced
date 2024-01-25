@@ -208,3 +208,7 @@ if __name__ == "__main__":
     data_args = Namespace(dataset_name='forest_cover',
                           test_prop=0.2,
                           val_prop=0.2,
+                          batch_size=128)
+
+    train_loader, val_loader, test_loader, scaler, args= \
+        load_dataset(args=data_args)
