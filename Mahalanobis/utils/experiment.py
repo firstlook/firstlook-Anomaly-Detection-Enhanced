@@ -65,3 +65,68 @@ def performance(anomalies, scores, percentage):
 
     # Number of observations to include in top
     n_top = math.ceil(len(anomalies) * percentage / 100)
+
+    return torch.sum(ordered_anomalies[:n_top]) / torch.sum(anomalies)
+
+def validate(data_loader, model, criterion, scaler, device):
+
+    class FillableArray:
+
+        def __repr__(self):
+            return self.X.__str__()
+
+        def __init__(self, n, tensor=False):
+            self.n = n
+            self.X = torch.Tensor(torch.zeros(n)) if tensor else np.zeros(n)
+            self.i = 0
+
+        def fill(self, x):
+            stop_ind = self.i + len(x)
+            assert self.n >= stop_ind
+            self.X[self.i:stop_ind] = x.flatten()
+            self.i = stop_ind
+
+    nrow = len(data_loader.dataset)
+    anomalies = FillableArray(nrow, tensor=True)
+    scores = FillableArray(nrow, tensor=True)
+    loss  =0
+
+    for i, (X_val, labels_val) in enumerate(data_loader):
+
+        # Copy to device
+        X_val, labels_val = X_val.to(device), labels_val.to(device)
+
+        # Scale X
+        X_val = scaler.normalize(X_val)
+
+        # Calculate output of model: reconstructions or Mahalanobis distance
+        out = model(X_val)
+
+        # Construct y tensor and calculate loss
+        y_val = torch.zeros_like(out) if model.mahalanobis else X_val
+        loss = criterion(out, y_val)
+
+        # Determine anomaly scores
+        val_scores = out if model.mahalanobis else outlier_factor(out, X_val)
+
+        # Fill anomaly and score tensors to compute performance on full set
+        anomalies.fill(labels_val)
+        scores.fill(val_scores)
+
+    loss /= i + 1
+    top1 = performance(anomalies.X, scores.X, 1).item()
+    top5 = performance(anomalies.X, scores.X, 5).item()
+    top10 = performance(anomalies.X, scores.X, 10).item()
+    top25 = performance(anomalies.X, scores.X, 25).item()
+
+    return loss.item(), top1, top5, top10, top25
+
+if __name__=='__main__':
+
+    x = torch.randn(10,3)
+    x_val = torch.randn_like(x)
+    print(outlier_factor(x, x_val))
+
+    from utils.dataloading import load_dataset
+    from argparse import Namespace
+    from modules.autoencoder import Autoencoder
