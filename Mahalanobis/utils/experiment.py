@@ -130,3 +130,24 @@ if __name__=='__main__':
     from utils.dataloading import load_dataset
     from argparse import Namespace
     from modules.autoencoder import Autoencoder
+
+    data_args = Namespace(dataset_name='kdd_smtp',
+                          test_prop=0.2,
+                          val_prop=0.2,
+                          batch_size=128)
+
+    train_loader, val_loader, test_loader, scaler, model_args = \
+        load_dataset(args=data_args)
+
+    args = Namespace(mahalanobis=True,
+                     mahalanobis_cov_decay=0.9,
+                     distort_inputs=False)
+
+    ae = Autoencoder(model_args.layer_dims, args.mahalanobis,
+                     args.mahalanobis_cov_decay, args.distort_inputs)
+    ae.double()
+    device = torch.device("cuda:0" if False else "cpu")
+    ae.to(device)
+
+    criterion = torch.nn.L1Loss()
+    test = validate(train_loader, ae, criterion, scaler, device)
