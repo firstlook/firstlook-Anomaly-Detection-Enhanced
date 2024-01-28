@@ -13,4 +13,5 @@ class Tracker:
         # Make signature of experiment
         time_signature = str(datetime.datetime.now())[:19]
         time_signature = re.sub('[^0-9]', '_', time_signature)
-        signature = '{}_{}_{}'.format(time_signature, args.mode
+        signature = '{}_{}_{}'.format(time_signature, args.model_name,
+                                      
