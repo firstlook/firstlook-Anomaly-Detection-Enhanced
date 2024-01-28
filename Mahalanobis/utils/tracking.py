@@ -14,4 +14,6 @@ class Tracker:
         time_signature = str(datetime.datetime.now())[:19]
         time_signature = re.sub('[^0-9]', '_', time_signature)
         signature = '{}_{}_{}'.format(time_signature, args.model_name,
-                                      
+                                      args.dataset_name)
+
+        # Set directory to sto
