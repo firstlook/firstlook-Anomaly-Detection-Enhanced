@@ -19,4 +19,5 @@ class Tracker:
         # Set directory to store run
         self.dir = './runs/{}/'.format(signature)
 
-        
+        if not os.path.exists(self.dir):
+            os.ma
