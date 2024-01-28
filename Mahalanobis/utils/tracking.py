@@ -16,4 +16,7 @@ class Tracker:
         signature = '{}_{}_{}'.format(time_signature, args.model_name,
                                       args.dataset_name)
 
-        # Set directory to sto
+        # Set directory to store run
+        self.dir = './runs/{}/'.format(signature)
+
+        
