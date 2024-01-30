@@ -25,4 +25,5 @@ class Tracker:
         # Store settings
         settings_dict = vars(args)
 
-        with open(s
+        with open(self.dir + 'settings.json', 'w') as file:
+            json.dump(sett
