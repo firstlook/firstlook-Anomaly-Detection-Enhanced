@@ -26,4 +26,6 @@ class Tracker:
         settings_dict = vars(args)
 
         with open(self.dir + 'settings.json', 'w') as file:
-            json.dump(sett
+            json.dump(settings_dict, file, sort_keys=True, indent=4)
+
+    
