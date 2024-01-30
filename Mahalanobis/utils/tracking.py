@@ -23,4 +23,6 @@ class Tracker:
             os.makedirs(self.dir)
 
         # Store settings
-    
+        settings_dict = vars(args)
+
+        with open(s
