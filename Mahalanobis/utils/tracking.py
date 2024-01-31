@@ -30,4 +30,5 @@ class Tracker:
 
         # Create csv file for appending stuff during training
         with open(self.dir + 'train_metrics.csv', 'w') as file:
-            filewriter = csv.writer(file, d
+            filewriter = csv.writer(file, delimiter=';')
+            filewriter.writerow(['epoch', '
