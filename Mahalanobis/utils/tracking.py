@@ -29,4 +29,5 @@ class Tracker:
             json.dump(settings_dict, file, sort_keys=True, indent=4)
 
         # Create csv file for appending stuff during training
-        with open(self.dir + 'train_metrics.csv', '
+        with open(self.dir + 'train_metrics.csv', 'w') as file:
+            filewriter = csv.writer(file, d
