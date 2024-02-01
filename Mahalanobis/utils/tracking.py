@@ -36,4 +36,6 @@ class Tracker:
                                  'top10_percent', 'top25_percent'])
 
         # Tensorboard writer
-        self.tensorboard=
+        self.tensorboard=args.tensorboard
+        if self.tensorboard:
+          
