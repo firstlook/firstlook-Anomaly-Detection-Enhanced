@@ -32,4 +32,5 @@ class Tracker:
         with open(self.dir + 'train_metrics.csv', 'w') as file:
             filewriter = csv.writer(file, delimiter=';')
             filewriter.writerow(['epoch', 'train_loss', 'val_loss',
-                               
+                                 'top1_percent', 'top5_percent',
+                          
