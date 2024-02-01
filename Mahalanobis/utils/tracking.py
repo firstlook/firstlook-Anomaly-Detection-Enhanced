@@ -33,4 +33,6 @@ class Tracker:
             filewriter = csv.writer(file, delimiter=';')
             filewriter.writerow(['epoch', 'train_loss', 'val_loss',
                                  'top1_percent', 'top5_percent',
-                          
+                                 'top10_percent', 'top25_percent'])
+
+        # 
