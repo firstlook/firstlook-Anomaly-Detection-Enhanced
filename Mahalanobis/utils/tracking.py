@@ -38,4 +38,5 @@ class Tracker:
         # Tensorboard writer
         self.tensorboard=args.tensorboard
         if self.tensorboard:
-            self.writer = SummaryWriter(log_dir=self.dir + 'tens
+            self.writer = SummaryWriter(log_dir=self.dir + 'tensorboard/')
+            self.k = 0  # Counter for tensorboa
