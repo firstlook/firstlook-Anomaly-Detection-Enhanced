@@ -35,4 +35,5 @@ class Tracker:
                                  'top1_percent', 'top5_percent',
                                  'top10_percent', 'top25_percent'])
 
-        # 
+        # Tensorboard writer
+        self.tensorboard=
