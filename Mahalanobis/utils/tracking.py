@@ -39,4 +39,7 @@ class Tracker:
         self.tensorboard=args.tensorboard
         if self.tensorboard:
             self.writer = SummaryWriter(log_dir=self.dir + 'tensorboard/')
-            self.k = 0  # Counter for tensorboa
+            self.k = 0  # Counter for tensorboard events
+
+    def __del__(self):
+        if 
