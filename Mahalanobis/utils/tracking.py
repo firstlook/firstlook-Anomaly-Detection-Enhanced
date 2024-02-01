@@ -42,4 +42,5 @@ class Tracker:
             self.k = 0  # Counter for tensorboard events
 
     def __del__(self):
-        if 
+        if self.tensorboard:
+            self.writer.clos
