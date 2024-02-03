@@ -45,4 +45,5 @@ class Tracker:
         if self.tensorboard:
             self.writer.close()
 
-    def track(self, epoch, train_loss, val_loss, top1_per
+    def track(self, epoch, train_loss, val_loss, top1_percent=0,
+              top5_percent=0, top10_percent=
