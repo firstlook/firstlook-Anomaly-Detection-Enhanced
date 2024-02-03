@@ -46,4 +46,7 @@ class Tracker:
             self.writer.close()
 
     def track(self, epoch, train_loss, val_loss, top1_percent=0,
-              top5_percent=0, top10_percent=
+              top5_percent=0, top10_percent=0, top25_percent=0):
+
+        # Collect values in list
+  
