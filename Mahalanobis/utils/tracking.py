@@ -43,4 +43,6 @@ class Tracker:
 
     def __del__(self):
         if self.tensorboard:
-            self.writer.clos
+            self.writer.close()
+
+    def track(self, epoch, train_loss, val_loss, top1_per
