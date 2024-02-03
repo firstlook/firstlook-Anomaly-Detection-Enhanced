@@ -49,4 +49,4 @@ class Tracker:
               top5_percent=0, top10_percent=0, top25_percent=0):
 
         # Collect values in list
-  
+        metrics = [epoch, train_loss, val_loss, top1_percent, 
