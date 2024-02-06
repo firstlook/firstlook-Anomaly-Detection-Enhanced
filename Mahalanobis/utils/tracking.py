@@ -54,3 +54,5 @@ class Tracker:
 
         # Append to csv file
         with open(self.dir + 'train_metrics.csv', 'a') as f:
+            writer = csv.writer(f)
+         
