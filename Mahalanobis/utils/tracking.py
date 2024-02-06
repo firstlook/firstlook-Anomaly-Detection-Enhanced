@@ -53,4 +53,4 @@ class Tracker:
                    top10_percent, top25_percent]
 
         # Append to csv file
-        with open(
+        with open(self.dir + 'train_metrics.csv', 'a') as f:
