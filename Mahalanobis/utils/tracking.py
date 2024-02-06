@@ -58,4 +58,5 @@ class Tracker:
             writer.writerow(metrics)
 
         # Write tensorboard events
-  
+        if self.tensorboard:
+            self.w
