@@ -50,4 +50,7 @@ class Tracker:
 
         # Collect values in list
         metrics = [epoch, train_loss, val_loss, top1_percent, top5_percent,
-                   top10_percent, top25_per
+                   top10_percent, top25_percent]
+
+        # Append to csv file
+        with open(
