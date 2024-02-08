@@ -59,4 +59,5 @@ class Tracker:
 
         # Write tensorboard events
         if self.tensorboard:
-            self.writer.add_scalar('data/train_loss', train_lo
+            self.writer.add_scalar('data/train_loss', train_loss, self.k)
+            self.writer.add_scalar('data
