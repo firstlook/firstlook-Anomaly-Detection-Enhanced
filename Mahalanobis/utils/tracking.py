@@ -61,4 +61,5 @@ class Tracker:
         if self.tensorboard:
             self.writer.add_scalar('data/train_loss', train_loss, self.k)
             self.writer.add_scalar('data/val_loss', val_loss, self.k)
-            self.writer.ad
+            self.writer.add_scalar('data/top1_percent', top1_percent, self.k)
+          
