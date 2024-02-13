@@ -65,4 +65,8 @@ class Tracker:
             self.writer.add_scalar('data/top5_percent', top5_percent, self.k)
             self.writer.add_scalar('data/top10_percent', top10_percent, self.k)
             self.writer.add_scalar('data/top25_percent', top25_percent, self.k)
-  
+            self.k += 1
+
+if __name__=='__main__':
+
+    from argpa
