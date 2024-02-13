@@ -64,4 +64,5 @@ class Tracker:
             self.writer.add_scalar('data/top1_percent', top1_percent, self.k)
             self.writer.add_scalar('data/top5_percent', top5_percent, self.k)
             self.writer.add_scalar('data/top10_percent', top10_percent, self.k)
-            self.wri
+            self.writer.add_scalar('data/top25_percent', top25_percent, self.k)
+  
