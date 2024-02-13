@@ -62,4 +62,5 @@ class Tracker:
             self.writer.add_scalar('data/train_loss', train_loss, self.k)
             self.writer.add_scalar('data/val_loss', val_loss, self.k)
             self.writer.add_scalar('data/top1_percent', top1_percent, self.k)
-            self.writer.add_scalar('data/top5_percent', top5_percent, 
+            self.writer.add_scalar('data/top5_percent', top5_percent, self.k)
+            self.writer.add_scalar('
