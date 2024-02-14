@@ -70,4 +70,6 @@ class Tracker:
 if __name__=='__main__':
 
     from argparse import Namespace
-    args = Namespace(datas
+    args = Namespace(dataset_name='shuttle',
+                     test_prop=0.2,
+          
