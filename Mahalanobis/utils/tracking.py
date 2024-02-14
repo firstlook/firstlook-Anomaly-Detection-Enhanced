@@ -72,4 +72,5 @@ if __name__=='__main__':
     from argparse import Namespace
     args = Namespace(dataset_name='shuttle',
                      test_prop=0.2,
-          
+                     val_prop=0.2,
+                     
