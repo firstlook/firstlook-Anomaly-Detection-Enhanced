@@ -69,4 +69,5 @@ class Tracker:
 
 if __name__=='__main__':
 
-    from argpa
+    from argparse import Namespace
+    args = Namespace(datas
