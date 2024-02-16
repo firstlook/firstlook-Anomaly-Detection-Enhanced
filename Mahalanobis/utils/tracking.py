@@ -77,4 +77,6 @@ if __name__=='__main__':
                      model_name='autoencoder',
                      tensorboard=True)
 
-    t =
+    t = Tracker(args)
+
+    t.track(10,0.1,0.11,0.111,0.1111,0.11111
