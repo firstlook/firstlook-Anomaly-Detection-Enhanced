@@ -74,4 +74,7 @@ if __name__=='__main__':
                      test_prop=0.2,
                      val_prop=0.2,
                      batch_size=128,
-                     model_name='a
+                     model_name='autoencoder',
+                     tensorboard=True)
+
+    t =
