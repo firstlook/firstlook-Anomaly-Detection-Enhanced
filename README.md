@@ -9,4 +9,6 @@ Anomaly Detection in computer vision
 [solution](./records/difficulty.md)
 
 
-## some resour
+## some resources about anomaly detection
+[resources](./resources.md)
+[pro
