@@ -6,4 +6,7 @@ Anomaly Detection in computer vision
 
 
 ## the difficulty and the Potential solution 
-[
+[solution](./records/difficulty.md)
+
+
+## some resour
