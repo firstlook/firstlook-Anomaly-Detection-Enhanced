@@ -16,4 +16,4 @@ class MVTecAD(data.Dataset):
     """Dataset class for the MVTecAD dataset."""
 
     def __init__(self, image_dir, transform):
-      
+        """Initialize and preprocess the MVTecAD dataset.
