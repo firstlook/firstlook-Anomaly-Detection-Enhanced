@@ -12,4 +12,5 @@ from torch.nn import functional as F
 
 
 
-class MVTecAD(d
+class MVTecAD(data.Dataset):
+    """Dataset class for the MVTecAD dataset."
