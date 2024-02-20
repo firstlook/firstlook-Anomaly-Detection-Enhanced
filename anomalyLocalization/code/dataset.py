@@ -13,4 +13,7 @@ from torch.nn import functional as F
 
 
 class MVTecAD(data.Dataset):
-    """Dataset class for the MVTecAD dataset."
+    """Dataset class for the MVTecAD dataset."""
+
+    def __init__(self, image_dir, transform):
+      
