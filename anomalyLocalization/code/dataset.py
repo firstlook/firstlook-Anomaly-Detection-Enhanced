@@ -8,4 +8,8 @@ from torch.utils import data
 from torchvision import transforms as T
 import torch.nn as nn
 import torch.optim as optim
-from torch.nn
+from torch.nn import functional as F
+
+
+
+class MVTecAD(d
