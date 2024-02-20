@@ -20,4 +20,6 @@ class MVTecAD(data.Dataset):
         self.image_dir = image_dir
         self.transform = transform
 
-    def __getitem__
+    def __getitem__(self, index):
+        """Return one image"""
+    
