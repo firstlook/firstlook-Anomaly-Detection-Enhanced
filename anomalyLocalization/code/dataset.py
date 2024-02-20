@@ -6,4 +6,6 @@ from PIL import Image
 import torch
 from torch.utils import data
 from torchvision import transforms as T
-import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.nn
