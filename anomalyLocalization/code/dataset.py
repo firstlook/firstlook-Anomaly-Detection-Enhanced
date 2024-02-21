@@ -22,4 +22,5 @@ class MVTecAD(data.Dataset):
 
     def __getitem__(self, index):
         """Return one image"""
-    
+        filename = "{:03}.png".format(index)
+        image =
