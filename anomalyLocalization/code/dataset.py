@@ -24,4 +24,6 @@ class MVTecAD(data.Dataset):
         """Return one image"""
         filename = "{:03}.png".format(index)
         image = Image.open(os.path.join(self.image_dir, filename))
-    
+        return self.transform(image)
+
+    def __len__(sel
