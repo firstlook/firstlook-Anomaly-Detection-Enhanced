@@ -26,4 +26,5 @@ class MVTecAD(data.Dataset):
         image = Image.open(os.path.join(self.image_dir, filename))
         return self.transform(image)
 
-    def __len__(sel
+    def __len__(self):
+        """Return the number of images."""
