@@ -28,3 +28,5 @@ class MVTecAD(data.Dataset):
 
     def __len__(self):
         """Return the number of images."""
+        return len(os.listdir(self.image_dir))
+
