@@ -30,3 +30,5 @@ class MVTecAD(data.Dataset):
         """Return the number of images."""
         return len(os.listdir(self.image_dir))
 
+
+def return_MVTecAD_loader(image_dir, batch_siz
