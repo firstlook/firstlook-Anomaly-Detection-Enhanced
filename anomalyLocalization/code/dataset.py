@@ -32,4 +32,6 @@ class MVTecAD(data.Dataset):
 
 
 def return_MVTecAD_loader(image_dir, batch_size=256, train=True):
-    """Build and return a data loade
+    """Build and return a data loader."""
+    transform = []
+    transform.append(T.Resize((512, 512))
