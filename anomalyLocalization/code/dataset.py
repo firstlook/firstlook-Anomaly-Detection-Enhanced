@@ -36,4 +36,4 @@ def return_MVTecAD_loader(image_dir, batch_size=256, train=True):
     transform = []
     transform.append(T.Resize((512, 512)))
     transform.append(T.RandomCrop((128,128)))
-    tra
+    transform.append(T.RandomHorizontalFlip(p=0.5))
