@@ -41,4 +41,6 @@ def return_MVTecAD_loader(image_dir, batch_size=256, train=True):
     transform.append(T.ToTensor())
     transform = T.Compose(transform)
 
-    dataset = MVTecAD(image_d
+    dataset = MVTecAD(image_dir, transform)
+
+    data_loader = data.DataLoader(dataset=dataset
