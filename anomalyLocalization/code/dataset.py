@@ -43,4 +43,5 @@ def return_MVTecAD_loader(image_dir, batch_size=256, train=True):
 
     dataset = MVTecAD(image_dir, transform)
 
-    data_loader = data.DataLoader(dataset=dataset
+    data_loader = data.DataLoader(dataset=dataset,
+                                 
