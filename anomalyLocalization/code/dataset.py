@@ -45,4 +45,5 @@ def return_MVTecAD_loader(image_dir, batch_size=256, train=True):
 
     data_loader = data.DataLoader(dataset=dataset,
                                   batch_size=batch_size,
-                                  sh
+                                  shuffle=train)
+    return data_loader
