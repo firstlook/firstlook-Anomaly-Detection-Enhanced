@@ -51,3 +51,33 @@ class VAE(nn.Module):
         x = self.conv_e(input)
         x = x.view(-1, 128*16*16)
         x = self.fc_e(x)
+        return x[:, :self.z_dim], x[:, self.z_dim:]
+
+    def reparameterize(self, mu, logvar):
+        if self.training:
+            std = logvar.mul(0.5).exp_()
+            eps = std.new(std.size()).normal_()
+            return eps.mul(std).add_(mu)
+        else:
+            return mu
+
+    def decode(self, z):
+        h = self.fc_d(z)
+        h = h.view(-1, 128, 16, 16)
+        return self.conv_d(h)
+
+    def forward(self, x):
+        mu, logvar = self.encode(x)
+        z = self.reparameterize(mu, logvar)
+        self.mu = mu
+        self.logvar = logvar
+        return self.decode(z)
+
+
+
+def loss_function(recon_x, x, mu, logvar):
+    recon = F.binary_cross_entropy(recon_x, x, reduction='sum')
+    kld = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+    return recon + kld
+
+
