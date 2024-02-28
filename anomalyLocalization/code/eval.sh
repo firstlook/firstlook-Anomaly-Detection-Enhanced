@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=2 python e
+CUDA_VISIBLE_DEVICES=2 python eval.py
