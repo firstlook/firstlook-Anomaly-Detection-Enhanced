@@ -65,3 +65,18 @@ def main():
         os.mkdir(out_dir)
         
     torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        
+    model = VAE(z_dim=512)
+    model.load_state_dict(torch.load("./checkpoints/500.pth"))
+    model=model.to(device)
+    
+    optimizer = torch.optim.Adam(model.parameters(), lr=5e-4)
+    
+    test_loader = return_MVTecAD_loader(image_dir="./mvtec_anomaly_detection/grid/test/metal_contamination/", batch_size=10, train=False)    
+    #eval(model=model,test_loader=test_loader,device=device)
+    EBM(model,test_loader,device)
+    
+if __name__ == "__main__":
+    main()
