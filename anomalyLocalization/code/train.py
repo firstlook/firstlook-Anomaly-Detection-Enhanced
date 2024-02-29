@@ -71,3 +71,29 @@ def main():
     print(device)
 
     seed = 42
+    out_dir = './logs'
+    if not os.path.exists(out_dir):
+        os.mkdir(out_dir)
+    checkpoints_dir ="./checkpoints"
+    if not os.path.exists(checkpoints_dir):
+        os.mkdir(out_dir)
+        
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        
+    model = VAE(z_dim=512).to(device)
+    
+    optimizer = torch.optim.Adam(model.parameters(), lr=5e-4)
+    num_epochs = 500
+    for epoch in range(num_epochs):
+        loss = train(model=model,train_loader=train_loader,device=device,optimizer=optimizer,epoch=epoch)
+        print('epoch [{}/{}], train loss: {:.4f}'.format(epoch + 1,num_epochs,loss))
+        if (epoch+1) % 10 == 0:
+            torch.save(model.state_dict(), os.path.join(checkpoints_dir,"{}.pth".format(epoch+1)))
+    test_loader = return_MVTecAD_loader(image_dir="./mvtec_anomaly_detection/grid/test/metal_contamination/", batch_size=10, train=False)    
+    eval(model=model,test_loader=test_loader,device=device)
+    EBM(model,test_loader,device)
+    
+if __name__ == "__main__":
+    main()
