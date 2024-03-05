@@ -69,3 +69,57 @@ class Encoder(nn.Module):
             nn.Conv2d(1,  16, 1, stride=1),
             nn.BatchNorm2d(16),
             nn.ReLU(),
+            nn.Conv2d(16, 32, 3, stride=2),
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+            nn.Conv2d(32, 64, 3, stride=2),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+        )
+
+    def forward(self, x):
+        return self.cnn(x)
+
+
+class Decoder(nn.Module):
+    def __init__(self):
+        super(Decoder, self).__init__()
+        self.cnn = nn.Sequential(
+            nn.ConvTranspose2d(64, 32, 2, stride=2),
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+            nn.ConvTranspose2d(32, 16, 2, stride=2),
+            nn.BatchNorm2d(16),
+            nn.ReLU(),
+            nn.ConvTranspose2d(16,  1, 3, ),
+            nn.Sigmoid()
+        )
+    
+    def forward(self, x):
+        return self.cnn(x) #[B, 1, 26, 26]
+
+class Memory(nn.Module):
+    def __init__(self, dimention, capacity=100, lbd=.02):
+        super(Memory, self).__init__()
+        self.cap = capacity
+        self.dim = dimention
+        self.lbd = lbd
+        self.mem = T.rand((capacity, dimention), requires_grad=True)
+        self.cos_sim = nn.CosineSimilarity()
+        self.softmax = nn.Softmax(1)
+
+    def forward(self, z):
+        #z should be : [BATCH, dimention]
+        z = z.unsqueeze(1)
+        #compute w with attention
+        w = self.softmax(self.cos_sim(
+            z.permute(0, 2, 1),
+            self.mem.expand(z.shape[0], self.cap, self.dim).permute(0, 2, 1)
+        ))
+        #hard-shrinking of w
+        t = w - self.lbd
+        w_hat = (T.max(t, T.zeros(w.shape)) * w) / (abs(t) + 1e-15)
+        print("average number of 0ed adresses", ((w_hat == 0).sum(1)).float().mean())
+        w_hat = (w_hat + 1e-15) / (w_hat + 1e-15).sum(1).reshape(-1, 1) #adding epsilon because of infinity graidnt => nan
+        #compute the w_hat enery by request
+        adressing_enery = (-w_hat * T.log(w_hat + 1e-3)).sum(0)
