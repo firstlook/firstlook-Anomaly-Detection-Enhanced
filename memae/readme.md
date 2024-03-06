@@ -1,0 +1,2 @@
+
+## Memorizing Normality to Detect

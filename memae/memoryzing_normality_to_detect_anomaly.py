@@ -219,3 +219,24 @@ print("classical AE acc:", accuracy_score(np.array(labels) == 9, classic_recontr
 # Compare with the new method
 memae_recontruction = []
 labels = []
+for xx, yy in tqdm(test_loader):
+    memae_recontruction.extend(
+        ((anomdec_memae(xx)[0] - xx[:, :, 1:-1, 1:-1]) ** 2).sum(1).sum(1).sum(1).detach().numpy()
+    )
+    labels.extend(yy.numpy())
+
+print(
+    "anomdec_memae mean training reconstruction error on normal : ", 
+    np.array(memae_recontruction)[np.array(labels) == 9].mean()
+)
+print(
+    "anomdec_memae mean training reconstruction error on abnormal : ", 
+    np.array(memae_recontruction)[np.array(labels) != 9].mean()
+)
+
+naive_th = np.array(memae_recontruction)[np.array(labels) == 9].mean() + 1.5 * np.array(memae_recontruction)[np.array(labels) == 9].std()
+
+print("memory AE f1 :",       f1_score(np.array(labels) == 9, memae_recontruction < naive_th))
+print("memory AE acc:", accuracy_score(np.array(labels) == 9, memae_recontruction < naive_th))
+#memory AE f1 : 0.455628495016
+#memory AE acc: 0.7761
