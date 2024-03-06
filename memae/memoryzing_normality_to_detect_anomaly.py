@@ -178,3 +178,44 @@ loss_function = nn.BCELoss()
 
 anomdec_memae.train()
 for i in range(2):
+    for (x,) in tqdm(train_normals_loader):
+        y = x[:, :, 1:-1, 1:-1]
+        optimizer.zero_grad()
+        yhat, energy = anomdec_memae(x.view([x.shape[0], 1, 28, 28]))
+        loss = loss_function(yhat, y) + (.002 * energy).mean()
+        loss.backward()
+        optimizer.step()
+        #slowly augment the sparse regulariation for addressing
+        anomdec_memae.memory.lbd = min(anomdec_memae.memory.lbd + 1e-5, 0.01005)
+        print(loss.item(), energy.mean().item())
+
+# Try to classify 9 or not 9 after learning only on 9 on the test set after fining the optimal threshold a posteriori
+
+# Print the classical reconstruction error with normal AE (at 1.5 std)
+classic_recontruction = []
+labels = []
+for xx, yy in tqdm(test_loader):
+    classic_recontruction.extend(
+        ((classic_AE(xx) - xx[:, :, 1:-1, 1:-1]) ** 2).sum(1).sum(1).sum(1).detach().numpy()
+    )
+    labels.extend(yy.numpy())
+
+print(
+    "classical mean training reconstruction error on normal : ", 
+    np.array(classic_recontruction)[np.array(labels) == 9].mean()
+)
+print(
+    "classical mean training reconstruction error on abnormal : ", 
+    np.array(classic_recontruction)[np.array(labels) != 9].mean()
+)
+
+naive_th = np.array(classic_recontruction)[np.array(labels) == 9].mean() + 1.5 * np.array(classic_recontruction)[np.array(labels) == 9].std()
+
+print("classical AE f1 :",       f1_score(np.array(labels) == 9, classic_recontruction < naive_th))
+print("classical AE acc:", accuracy_score(np.array(labels) == 9, classic_recontruction < naive_th))
+#classical AE f1 : 0.1899810019
+#classical AE acc: 0.1899
+
+# Compare with the new method
+memae_recontruction = []
+labels = []
