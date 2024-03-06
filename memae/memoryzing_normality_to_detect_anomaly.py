@@ -123,3 +123,58 @@ class Memory(nn.Module):
         w_hat = (w_hat + 1e-15) / (w_hat + 1e-15).sum(1).reshape(-1, 1) #adding epsilon because of infinity graidnt => nan
         #compute the w_hat enery by request
         adressing_enery = (-w_hat * T.log(w_hat + 1e-3)).sum(0)
+        #get z_hat from memory with the computer soft adresseses w_hat
+        z_hat = w_hat.mm(self.mem)
+        return z_hat, adressing_enery
+
+# Build the proposed model
+class MemAE(nn.Module):
+    def __init__(self, dimension=2304, capacity=100, lbd=.002):
+        super(MemAE, self).__init__()
+        self.encoder = Encoder()
+        self.decoder = Decoder()
+        self.memory  = Memory(dimention=dimension, capacity=capacity, lbd=lbd)
+    
+    def forward(self, x):
+        # Compute z and flatten it
+        z = self.encoder(x)
+        encoded_input_shape = z.shape
+        z = z.reshape(z.shape[0], -1)
+        # Get the new z_hat latent representation and the energy required for retriving it
+        z_hat, adressing_enery = self.memory(z)
+        # Decode the new latent representation
+        out = self.decoder(z_hat.reshape(encoded_input_shape))
+        return out, adressing_enery
+
+    def parameters(self):
+        for p in self.encoder.parameters():
+            yield p
+        for p in self.decoder.parameters():
+            yield p
+        yield self.memory.mem
+        return
+
+# Train a classic ConvAE for future comparison
+classic_AE = nn.Sequential(Encoder(), Decoder())
+
+optimizer = torch.optim.Adam(classic_AE.parameters())
+loss_function = nn.BCELoss()
+
+classic_AE.train()
+for (x,) in tqdm(train_normals_loader):
+    y = x[:, :, 1:-1, 1:-1]
+    optimizer.zero_grad()
+    yhat = classic_AE(x.view([x.shape[0], 1, 28, 28]))
+    loss = loss_function(yhat, y)
+    loss.backward()
+    optimizer.step()
+
+
+# Train the proposed anomaly detection autoencoder
+anomdec_memae = MemAE(lbd=.01)
+
+optimizer = torch.optim.Adam(anomdec_memae.parameters())
+loss_function = nn.BCELoss()
+
+anomdec_memae.train()
+for i in range(2):
