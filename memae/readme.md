@@ -3,4 +3,8 @@
 
 
 ## Architecture
-![img](https://github.com/YeongHyeon/MemAE/blob/master/figures
+![img](https://github.com/YeongHyeon/MemAE/blob/master/figures/memae.png)
+
+
+## Reference
+[MemAE](https://githu
