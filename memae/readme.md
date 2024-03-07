@@ -3,4 +3,4 @@
 
 
 ## Architecture
-![img](h
+![img](https://github.com/YeongHyeon/MemAE/blob/master/figures
