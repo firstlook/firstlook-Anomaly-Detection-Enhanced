@@ -7,4 +7,6 @@
 
 
 ## Reference
-[MemAE](https://githu
+[MemAE](https://github.com/YeongHyeon/MemAE)
+
+[1] Dong Gong et al. (2019). 
