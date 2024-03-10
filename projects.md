@@ -2,4 +2,5 @@
 
 [SUOD](https://github.com/yzhao062/SUOD)
 
-[anomaly-detection-resources](https://github.com/yz
+[anomaly-detection-resources](https://github.com/yzhao062/anomaly-detection-resources)
+
